@@ -1,0 +1,126 @@
+package hatb0t.pictocraft;
+
+import net.minecraft.item.Item;
+import hatb0t.pictocraft.common.CommonProxy;
+import hatb0t.pictocraft.runes.Air_Rune;
+import hatb0t.pictocraft.runes.Arcane_Rune;
+import hatb0t.pictocraft.runes.Dark_Rune;
+import hatb0t.pictocraft.runes.Death_Rune;
+import hatb0t.pictocraft.runes.Earth_Rune;
+import hatb0t.pictocraft.runes.Fire_Rune;
+import hatb0t.pictocraft.runes.Light_Rune;
+import hatb0t.pictocraft.runes.Rune;
+import hatb0t.pictocraft.runes.Rune_Raw;
+import hatb0t.pictocraft.runes.Soul_Rune;
+import hatb0t.pictocraft.runes.Water_Rune;
+import hatb0t.pictocraft.talismans.Chain;
+import hatb0t.pictocraft.talismans.Essence;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
+
+@NetworkMod(clientSideRequired=true,serverSideRequired=false)
+@Mod(modid="pictocraft",name="Pictocraft",version="Alpha 0.0")
+
+public class pictocraft {
+	
+	public static Item Rune_Raw;
+	public static Item Rune;
+	public static Item Fire_Rune;
+	public static Item Water_Rune;
+	public static Item Soul_Rune;
+	public static Item Earth_Rune;
+	public static Item Death_Rune;
+	public static Item Light_Rune;
+	public static Item Dark_Rune;
+	public static Item Air_Rune;
+	public static Item Arcane_Rune;
+	public static Item Chain;
+	public static Item Essence;
+	public static Item Fire_Talisman;
+	public static Item Soul_Talisman;
+	public static Item Water_Talisman;
+	public static Item Earth_Talisman;
+	public static Item Death_Talisman;
+	public static Item Light_Talisman;
+	public static Item Dark_Talisman;
+	public static Item Air_Talisman;
+	public static Item Arcane_Talisman;
+	
+@Instance("pictocraft")
+public static pictocraft instance = new pictocraft();
+
+@SidedProxy(clientSide = "hatb0t.pictocraft.ClientProxy", serverSide = "hatb0t.pictocraft.common.TutorialModCommonProxy") 
+public static CommonProxy proxy;
+
+@EventHandler
+public void PreInit(FMLPreInitializationEvent event){
+
+}
+
+@EventHandler
+public void Init(FMLInitializationEvent event){ 
+	
+	Rune_Raw = new Rune_Raw(5000).setUnlocalizedName("Raw Rune");
+		LanguageRegistry.addName(Rune_Raw, "Raw Rune");
+		
+	Rune = new Rune(5001).setUnlocalizedName("Rune");
+		LanguageRegistry.addName(Rune, "Rune");
+		
+	Fire_Rune = new Fire_Rune(5002).setUnlocalizedName("Fire_Rune");
+		LanguageRegistry.addName(Fire_Rune, "Fire Rune");
+
+	Water_Rune = new Water_Rune(5003).setUnlocalizedName("Water_Rune");
+		LanguageRegistry.addName(Water_Rune, "Water Rune");
+		
+	Soul_Rune = new Soul_Rune(5004).setUnlocalizedName("Soul_Rune");
+		LanguageRegistry.addName(Soul_Rune, "Soul Rune");
+		
+	Earth_Rune = new Earth_Rune(5005).setUnlocalizedName("Earth_Rune");
+		LanguageRegistry.addName(Earth_Rune, "Earth Rune");
+		
+	Death_Rune = new Death_Rune(5006).setUnlocalizedName("Death_Rune");
+		LanguageRegistry.addName(Death_Rune, "Death Rune");
+		
+	Light_Rune = new Light_Rune(5007).setUnlocalizedName("Light_Rune");
+		LanguageRegistry.addName(Light_Rune, "Light Rune");
+		
+	Dark_Rune = new Dark_Rune(5008).setUnlocalizedName("Dark_Rune");
+		LanguageRegistry.addName(Dark_Rune, "Dark Rune");
+		
+	Air_Rune = new Air_Rune(5009).setUnlocalizedName("Air_Rune");
+		LanguageRegistry.addName(Air_Rune, "Air Rune");
+		
+	Arcane_Rune = new Arcane_Rune(5010).setUnlocalizedName("Arcane_Rune");
+		LanguageRegistry.addName(Arcane_Rune, "Arcane Rune");
+	
+	Chain = new Chain(5011).setUnlocalizedName("Chain");
+		LanguageRegistry.addName(Chain, "Chain");
+		
+	Essence = new Essence(5012).setUnlocalizedName("Essence");
+		LanguageRegistry.addName(Essence, "Essence");
+		
+	Fire_Talisman = new Fire_Talisman(5013).setUnlocalizedName("Fire_Talisman");
+		LanguageRegistry.addName(Fire_Talisman, "Fire Talisman");
+		
+	Water_Talisman = new Water_Talisman(5013).setUnlocalizedName("Water_Talisman");
+		LanguageRegistry.addName(Water_Talisman, "Water Talisman");
+		
+	Soul_Talisman = new Soul_Talisman(5013).setUnlocalizedName("Soul_Talisman");
+		LanguageRegistry.addName(Soul_Talisman, "Soul Talisman");
+		
+	
+}
+
+@EventHandler
+public void PostInit(FMLPostInitializationEvent event){
+	
+}
+}

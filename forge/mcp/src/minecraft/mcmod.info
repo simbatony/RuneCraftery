@@ -1,0 +1,21 @@
+{
+  "modinfoversion": 2,
+  "modlist": [{
+    "modid": "pictocraft",
+    "name": "RuneCraftery",
+    "description": "A simple mod adding some runes and magic into the world of minecraft, including various apperatuses for crafting magical items.",
+    "version": "Alpha 0.0",
+    "mcversion": "1.6.4",
+    "url": "Not available yet",
+    "updateUrl": "",
+    "authors": [ "hatb0t", "chr0me1" ],
+    "credits": "Authored by hatb0t and chr0me1",
+    "logoFile": "",
+    "screenshots": [ ],
+    "parent": "none",
+    "requiredMods": [ "Forge" ],
+    "dependencies": [ "none" ],
+    "dependants": [ "none" ],
+    "useDependencyInformation": "false"
+  }]
+}

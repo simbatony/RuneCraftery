@@ -1,0 +1,5 @@
+package hatb0t.pictocraft.talismans;
+
+public class Fire_Talisman extends Talisman {
+
+}

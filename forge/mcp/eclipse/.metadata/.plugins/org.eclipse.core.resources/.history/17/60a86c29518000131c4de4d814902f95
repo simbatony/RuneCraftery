@@ -1,0 +1,143 @@
+package hatb0t.pictocraft;
+
+import hatb0t.pictocraft.common.CommonProxy;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
+
+@NetworkMod(clientSideRequired=true,serverSideRequired=false)
+@Mod(modid="pictocraft",name="Pictocraft",version="Alpha 0.0")
+
+public class pictocraft {
+	
+	public static Item Rune_Raw;
+	public static Item Rune;
+	public static Item Fire_Rune;
+	public static Item Water_Rune;
+	public static Item Soul_Rune;
+	public static Item Earth_Rune;
+	public static Item Death_Rune;
+	public static Item Light_Rune;
+	public static Item Dark_Rune;
+	public static Item Air_Rune;
+	public static Item Arcane_Rune;
+	public static Item Chain;
+	public static Item Essence;
+	public static Item Fire_Talisman;
+	public static Item Soul_Talisman;
+	public static Item Water_Talisman;
+	public static Item Earth_Talisman;
+	public static Item Death_Talisman;
+	public static Item Light_Talisman;
+	public static Item Dark_Talisman;
+	public static Item Air_Talisman;
+	public static Item Arcane_Talisman;
+	public static Item Rune_Slab;
+	
+	public static Block Rune_Block;
+	
+@Instance("pictocraft")
+public static pictocraft instance = new pictocraft();
+
+@SidedProxy(clientSide = "hatb0t.pictocraft.ClientProxy", serverSide = "hatb0t.pictocraft.common.TutorialModCommonProxy") 
+public static CommonProxy proxy;
+
+@EventHandler
+public void PreInit(FMLPreInitializationEvent event){
+
+}
+
+@EventHandler
+public void Init(FMLInitializationEvent event){ 
+	
+	Rune_Raw = new hatb0t.pictocraft.runes.Rune_Raw(5000).setUnlocalizedName("Raw Rune");
+		LanguageRegistry.addName(Rune_Raw, "Raw Rune");
+		
+	Rune = new hatb0t.pictocraft.runes.Rune(5001).setUnlocalizedName("Rune");
+		LanguageRegistry.addName(Rune, "Rune");
+		
+	Fire_Rune = new hatb0t.pictocraft.runes.Fire_Rune(5002).setUnlocalizedName("Fire_Rune");
+		LanguageRegistry.addName(Fire_Rune, "Fire Rune");
+
+	Water_Rune = new hatb0t.pictocraft.runes.Water_Rune(5003).setUnlocalizedName("Water_Rune");
+		LanguageRegistry.addName(Water_Rune, "Water Rune");
+		
+	Soul_Rune = new hatb0t.pictocraft.runes.Soul_Rune(5004).setUnlocalizedName("Soul_Rune");
+		LanguageRegistry.addName(Soul_Rune, "Soul Rune");
+		
+	Earth_Rune = new hatb0t.pictocraft.runes.Earth_Rune(5005).setUnlocalizedName("Earth_Rune");
+		LanguageRegistry.addName(Earth_Rune, "Earth Rune");
+		
+	Death_Rune = new hatb0t.pictocraft.runes.Death_Rune(5006).setUnlocalizedName("Death_Rune");
+		LanguageRegistry.addName(Death_Rune, "Death Rune");
+		
+	Light_Rune = new hatb0t.pictocraft.runes.Light_Rune(5007).setUnlocalizedName("Light_Rune");
+		LanguageRegistry.addName(Light_Rune, "Light Rune");
+		
+	Dark_Rune = new hatb0t.pictocraft.runes.Dark_Rune(5008).setUnlocalizedName("Dark_Rune");
+		LanguageRegistry.addName(Dark_Rune, "Dark Rune");
+		
+	Air_Rune = new hatb0t.pictocraft.runes.Air_Rune(5009).setUnlocalizedName("Air_Rune");
+		LanguageRegistry.addName(Air_Rune, "Air Rune");
+		
+	Arcane_Rune = new hatb0t.pictocraft.runes.Arcane_Rune(5010).setUnlocalizedName("Arcane_Rune");
+		LanguageRegistry.addName(Arcane_Rune, "Arcane Rune");
+	
+	Chain = new hatb0t.pictocraft.talismans.Chain(5011).setUnlocalizedName("Chain");
+		LanguageRegistry.addName(Chain, "Chain");
+		
+	Essence = new hatb0t.pictocraft.talismans.Essence(5012).setUnlocalizedName("Essence");
+		LanguageRegistry.addName(Essence, "Essence");
+		
+	Fire_Talisman = new hatb0t.pictocraft.talismans.Fire_Talisman(5013).setUnlocalizedName("Fire_Talisman");
+		LanguageRegistry.addName(Fire_Talisman, "Fire Talisman");
+		
+	Water_Talisman = new hatb0t.pictocraft.talismans.Water_Talisman(5014).setUnlocalizedName("Water_Talisman");
+		LanguageRegistry.addName(Water_Talisman, "Water Talisman");
+		
+	Soul_Talisman = new hatb0t.pictocraft.talismans.Soul_Talisman(5015).setUnlocalizedName("Soul_Talisman");
+		LanguageRegistry.addName(Soul_Talisman, "Soul Talisman");
+		
+	Air_Talisman = new hatb0t.pictocraft.talismans.Air_Talisman(5016).setUnlocalizedName("Air_Talisman");
+		LanguageRegistry.addName(Air_Talisman, "Air Talisman");
+		
+	Earth_Talisman = new hatb0t.pictocraft.talismans.Earth_Talisman(5017).setUnlocalizedName("Earth_Talisman");
+		LanguageRegistry.addName(Earth_Talisman, "Earth Talisman");
+		
+	Arcane_Talisman = new hatb0t.pictocraft.talismans.Arcane_Talisman(5018).setUnlocalizedName("Arcane_Talisman");
+		LanguageRegistry.addName(Arcane_Talisman, "Arcane Talisman");
+		
+	Light_Talisman = new hatb0t.pictocraft.talismans.Light_Talisman(5019).setUnlocalizedName("Light_Talisman");
+		LanguageRegistry.addName(Light_Talisman, "Light Talisman");
+		
+	Dark_Talisman = new hatb0t.pictocraft.talismans.Dark_Talisman(5020).setUnlocalizedName("Dark_Talisman");
+		LanguageRegistry.addName(Dark_Talisman, "Dark Talisman");
+		
+	Death_Talisman = new hatb0t.pictocraft.talismans.Death_Talisman(5021).setUnlocalizedName("Death_Talisman");
+		LanguageRegistry.addName(Death_Talisman, "Death Talisman");
+		
+	Rune_Slab = new hatb0t.pictocraft.runes.Rune_Slab(5022).setUnlocalizedName("Rune_Slab");
+		LanguageRegistry.addName(Rune_Slab, "Rune Slab");
+		
+	Rune_Block = new hatb0t.pictocraft.blocks.Rune_Block(500, Material.iron).setUnlocalizedName("Rune_Block");
+		LanguageRegistry.addName(Rune_Block, "Rune Crystal");
+		GameRegistry.registerBlock(Rune_Block, "Rune_Block");
+		
+}
+
+@EventHandler
+public void PostInit(FMLPostInitializationEvent event){
+	
+}
+}

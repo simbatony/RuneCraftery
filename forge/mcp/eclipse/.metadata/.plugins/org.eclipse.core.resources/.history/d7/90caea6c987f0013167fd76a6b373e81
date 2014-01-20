@@ -1,0 +1,15 @@
+package hatb0t.pictocraft;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class Earth_Rune extends Item{
+
+	public Earth_Rune(int id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+		setMaxStackSize(16);
+		setCreativeTab(CreativeTabs.tabTools);
+	}
+
+}

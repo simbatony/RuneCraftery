@@ -1,0 +1,36 @@
+package hatb0t.pictocraft.blocks;
+
+import hatb0t.pictocraft.pictocraft;
+
+import java.util.Random;
+
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.item.*;
+import net.minecraft.block.*;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IconRegister;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+
+public class Rune_Block extends Block {
+
+	public Rune_Block(int id, Material par2Material) {
+		super(id, par2Material);
+		// TODO Auto-generated constructor stub
+	}
+	
+	public int quantityDropped(Random random){
+		return 10 + random.nextInt(5);
+	}
+	
+	public int idDropped (int i, Random random, int j){
+		return pictocraft.Rune_Raw.itemID; 
+	}
+	
+	@SideOnly(Side.CLIENT)
+	public void registerIcons(IconRegister par1IconRegister){
+		this.blockIcon = par1IconRegister.registerIcon("pictocraft" + ":" +(this.getUnlocalizedName().substring(5)));
+	}
+
+}

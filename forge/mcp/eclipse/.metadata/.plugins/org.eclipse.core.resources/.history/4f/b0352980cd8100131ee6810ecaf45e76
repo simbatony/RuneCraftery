@@ -1,0 +1,12 @@
+package hatb0t.pictocraft.runes;
+
+import net.minecraft.item.Item;
+
+public class Element_Stone extends Item {
+
+	public Element_Stone(int id) {
+		super(id);
+		// TODO Auto-generated constructor stub
+	}
+
+}

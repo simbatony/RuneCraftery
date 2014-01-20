@@ -1,0 +1,10 @@
+package hatb0t.pictocraft.talismans;
+
+public class Water_Talisman extends Talisman {
+
+	public Water_Talisman(int par1) {
+		super(par1);
+		// TODO Auto-generated constructor stub
+	}
+
+}

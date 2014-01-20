@@ -1,0 +1,61 @@
+package hatb0t.pictocraft;
+
+import net.minecraft.item.Item;
+import hatb0t.pictocraft.common.CommonProxy;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
+
+@NetworkMod(clientSideRequired=true,serverSideRequired=false)
+@Mod(modid="pictocraft",name="Pictocraft",version="Alpha 0.0")
+
+public class pictocraft {
+	
+	public static Item Rune_Ore;
+	public static Item Rune;
+	public static Item Fire_Rune;
+	public static Item Water_Rune;
+	public static Item Soul_Rune;
+
+@Instance("pictocraft")
+public static pictocraft instance = new pictocraft();
+
+@SidedProxy(clientSide = "hatb0t.pictocraft.ClientProxy", serverSide = "hatb0t.pictocraft.common.TutorialModCommonProxy") 
+public static CommonProxy proxy;
+
+@EventHandler
+public void PreInit(FMLPreInitializationEvent event){
+
+}
+
+@EventHandler
+public void Init(FMLInitializationEvent event){ 
+	
+	Rune_Ore = new Rune_Ore(5000).setUnlocalizedName("Raw Rune");
+		LanguageRegistry.addName(Rune_Ore, "Raw Rune");
+		
+	Rune = new Rune(5001).setUnlocalizedName("Rune");
+		LanguageRegistry.addName(Rune, "Rune");
+		
+	Fire_Rune = new Fire_Rune(5002).setUnlocalizedName("Fire_Rune");
+		LanguageRegistry.addName(Fire_Rune, "Fire Rune");
+
+	Water_Rune = new Fire_Rune(5003).setUnlocalizedName("Fire_Rune");
+		LanguageRegistry.addName(Fire_Rune, "Fire Rune");
+		
+	Soul_Rune = new Soul_Rune(5004).setUnlocalizedName("Soul_Rune");
+		LanguageRegistry.addName(Soul_Rune, "Soul Rune");
+}
+
+@EventHandler
+public void PostInit(FMLPostInitializationEvent event){
+	
+}
+}

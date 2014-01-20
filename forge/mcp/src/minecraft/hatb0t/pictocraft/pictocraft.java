@@ -1,0 +1,349 @@
+package hatb0t.pictocraft;
+
+import hatb0t.pictocraft.common.CommonProxy;
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.Mod.Instance;
+import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.network.NetworkMod;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.LanguageRegistry;
+
+
+@NetworkMod(clientSideRequired=true,serverSideRequired=false)
+@Mod(modid="pictocraft",name="RuneCraftery",version="Alpha 0.0")
+
+public class pictocraft {
+	
+	public static Item Rune_Raw;
+	public static Item Rune;
+	public static Item Fire_Rune;
+	public static Item Water_Rune;
+	public static Item Soul_Rune;
+	public static Item Earth_Rune;
+	public static Item Death_Rune;
+	public static Item Light_Rune;
+	public static Item Dark_Rune;
+	public static Item Air_Rune;
+	public static Item Arcane_Rune;
+	public static Item Chain;
+	public static Item Essence;
+	public static Item Fire_Talisman;
+	public static Item Soul_Talisman;
+	public static Item Water_Talisman;
+	public static Item Earth_Talisman;
+	public static Item Death_Talisman;
+	public static Item Light_Talisman;
+	public static Item Dark_Talisman;
+	public static Item Air_Talisman;
+	public static Item Arcane_Talisman;
+	public static Item Rune_Slab;
+	public static Item Fire_Symbol;
+	public static Item Water_Symbol;
+	public static Item Soul_Symbol;
+	public static Item Earth_Symbol;
+	public static Item Death_Symbol;
+	public static Item Light_Symbol;
+	public static Item Dark_Symbol;
+	public static Item Air_Symbol;
+	public static Item Arcane_Symbol;
+	public static Item Element_Stone;
+	
+	public static Block Rune_Block;
+	public static Block Essence_Extractor;
+	public static Block Rune_Infuser;
+	
+	public static CreativeTabs pictocraftTab = new CreativeTabs("hatb0t_pictocraftTab"){
+		public ItemStack getIconItemStack(){
+			return new ItemStack(Dark_Rune);
+		}
+	};
+	
+	EventManager eventManager = new EventManager();
+	
+@Instance("pictocraft")
+public static pictocraft instance = new pictocraft();
+
+@SidedProxy(clientSide = "hatb0t.pictocraft.ClientProxy", serverSide = "hatb0t.pictocraft.common.TutorialModCommonProxy") 
+public static CommonProxy proxy;
+
+@EventHandler
+public void Init(FMLInitializationEvent event){ 
+	
+	Rune_Raw = new hatb0t.pictocraft.runes.Rune_Raw(5000).setUnlocalizedName("Raw Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Rune_Raw, "Raw Rune");
+		
+	Rune = new hatb0t.pictocraft.runes.Rune(5001).setUnlocalizedName("Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Rune, "Rune");
+		
+	Fire_Rune = new hatb0t.pictocraft.runes.Fire_Rune(5002).setUnlocalizedName("Fire_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Fire_Rune, "Fire Rune");
+
+	Water_Rune = new hatb0t.pictocraft.runes.Water_Rune(5003).setUnlocalizedName("Water_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Water_Rune, "Water Rune");
+		
+	Soul_Rune = new hatb0t.pictocraft.runes.Soul_Rune(5004).setUnlocalizedName("Soul_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Soul_Rune, "Soul Rune");
+		
+	Earth_Rune = new hatb0t.pictocraft.runes.Earth_Rune(5005).setUnlocalizedName("Earth_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Earth_Rune, "Earth Rune");
+		
+	Death_Rune = new hatb0t.pictocraft.runes.Death_Rune(5006).setUnlocalizedName("Death_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Death_Rune, "Death Rune");
+		
+	Light_Rune = new hatb0t.pictocraft.runes.Light_Rune(5007).setUnlocalizedName("Light_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Light_Rune, "Light Rune");
+		
+	Dark_Rune = new hatb0t.pictocraft.runes.Dark_Rune(5008).setUnlocalizedName("Dark_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Dark_Rune, "Dark Rune");
+		
+	Air_Rune = new hatb0t.pictocraft.runes.Air_Rune(5009).setUnlocalizedName("Air_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Air_Rune, "Air Rune");
+		
+	Arcane_Rune = new hatb0t.pictocraft.runes.Arcane_Rune(5010).setUnlocalizedName("Arcane_Rune").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Arcane_Rune, "Arcane Rune");
+	
+	Chain = new hatb0t.pictocraft.talismans.Chain(5011).setUnlocalizedName("Chain").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Chain, "Chain");
+		
+	Essence = new hatb0t.pictocraft.talismans.Essence(5012).setUnlocalizedName("Essence").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Essence, "Essence");
+		
+	Fire_Talisman = new hatb0t.pictocraft.talismans.Fire_Talisman(5013).setUnlocalizedName("Fire_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Fire_Talisman, "Fire Talisman");
+		
+	Water_Talisman = new hatb0t.pictocraft.talismans.Water_Talisman(5014).setUnlocalizedName("Water_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Water_Talisman, "Water Talisman");
+		
+	Soul_Talisman = new hatb0t.pictocraft.talismans.Soul_Talisman(5015).setUnlocalizedName("Soul_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Soul_Talisman, "Soul Talisman");
+		
+	Air_Talisman = new hatb0t.pictocraft.talismans.Air_Talisman(5016).setUnlocalizedName("Air_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Air_Talisman, "Air Talisman");
+		
+	Earth_Talisman = new hatb0t.pictocraft.talismans.Earth_Talisman(5017).setUnlocalizedName("Earth_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Earth_Talisman, "Earth Talisman");
+		
+	Arcane_Talisman = new hatb0t.pictocraft.talismans.Arcane_Talisman(5018).setUnlocalizedName("Arcane_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Arcane_Talisman, "Arcane Talisman");
+		
+	Light_Talisman = new hatb0t.pictocraft.talismans.Light_Talisman(5019).setUnlocalizedName("Light_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Light_Talisman, "Light Talisman");
+		
+	Dark_Talisman = new hatb0t.pictocraft.talismans.Dark_Talisman(5020).setUnlocalizedName("Dark_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Dark_Talisman, "Dark Talisman");
+		
+	Death_Talisman = new hatb0t.pictocraft.talismans.Death_Talisman(5021).setUnlocalizedName("Death_Talisman").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Death_Talisman, "Death Talisman");
+		
+	Rune_Slab = new hatb0t.pictocraft.runes.Rune_Slab(5022).setUnlocalizedName("Rune_Slab").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Rune_Slab, "Rune Slab");
+		
+	Fire_Symbol = new hatb0t.pictocraft.symbols.Fire_Symbol(5023).setUnlocalizedName("Fire_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Fire_Symbol, "Fire Symbol");
+
+	Water_Symbol = new hatb0t.pictocraft.symbols.Water_Symbol(5024).setUnlocalizedName("Water_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Water_Symbol, "Water Symbol");
+		
+	Soul_Symbol = new hatb0t.pictocraft.symbols.Soul_Symbol(5025).setUnlocalizedName("Soul_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Soul_Symbol, "Soul Symbol");
+		
+	Earth_Symbol = new hatb0t.pictocraft.symbols.Earth_Symbol(5026).setUnlocalizedName("Earth_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Earth_Symbol, "Earth Symbol");
+		
+	Death_Symbol = new hatb0t.pictocraft.symbols.Death_Symbol(5027).setUnlocalizedName("Death_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Death_Symbol, "Death Symbol");
+		
+	Light_Symbol = new hatb0t.pictocraft.symbols.Light_Symbol(5028).setUnlocalizedName("Light_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Light_Symbol, "Light Symbol");
+		
+	Dark_Symbol = new hatb0t.pictocraft.symbols.Dark_Symbol(5029).setUnlocalizedName("Dark_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Dark_Symbol, "Dark Symbol");
+		
+	Air_Symbol = new hatb0t.pictocraft.symbols.Air_Symbol(5030).setUnlocalizedName("Air_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Air_Symbol, "Air Symbol");
+		
+	Arcane_Symbol = new hatb0t.pictocraft.symbols.Arcane_Symbol(5031).setUnlocalizedName("Arcane_Symbol").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Arcane_Symbol, "Arcane Symbol");
+		
+	Element_Stone = new hatb0t.pictocraft.runes.Element_Stone(5032).setUnlocalizedName("Element_Stone").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Element_Stone, "Element Stone");
+		
+	Rune_Block = new hatb0t.pictocraft.blocks.Rune_Block(500, Material.iron).setUnlocalizedName("Rune_Block").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Rune_Block, "Rune Crystal");
+		GameRegistry.registerBlock(Rune_Block, "Rune_Block");
+		
+	Rune_Infuser = new hatb0t.pictocraft.blocks.Rune_Infuser(501, Material.iron).setUnlocalizedName("Rune_Infuser").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Rune_Infuser, "Rune Infuser");
+		GameRegistry.registerBlock(Rune_Infuser, "Rune_Infuser");
+		
+	Essence_Extractor = new hatb0t.pictocraft.blocks.Essence_Extractor(502, Material.iron).setUnlocalizedName("Essence_Extractor").setCreativeTab(pictocraftTab);
+		LanguageRegistry.addName(Essence_Extractor, "Essence Extractor");
+		GameRegistry.registerBlock(Essence_Extractor, "Essence_Extractor");
+		
+		GameRegistry.registerWorldGenerator(eventManager);
+		
+	GameRegistry.addRecipe(new ItemStack(Rune_Slab), new Object[]{
+		"   ",
+		"XXX",
+		"XXX",
+		'X', Rune_Raw
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Rune, 8), new Object[]{
+		" X ",
+		"XYX",
+		" X ",
+		'X', Rune_Raw, 'Y', Rune_Slab
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Chain), new Object[]{
+		" X ",
+		"X X",
+		"XXX",
+		'X', Item.ingotIron
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Fire_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Fire_Rune, 'X', Chain
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Air_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Air_Rune, 'X', Chain
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Arcane_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Arcane_Rune, 'X', Chain
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Dark_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Dark_Rune, 'X', Chain
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Death_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Death_Rune, 'X', Chain
+	});
+
+	GameRegistry.addRecipe(new ItemStack(Earth_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Earth_Rune, 'X', Chain
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Light_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Light_Rune, 'X', Chain
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Soul_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Soul_Rune, 'X', Chain
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Water_Talisman), new Object[]{
+		" X ",
+		"X X",
+		"RX ",
+		'R', Water_Rune, 'X', Chain
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Fire_Symbol), new Object[]{
+		" X ",
+		" X ",
+		"X X",
+		'X', Essence
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Water_Symbol), new Object[]{
+		" XX",
+		"X X",
+		" XX",
+		'X', Essence
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Soul_Symbol), new Object[]{
+		" XX",
+		"XXX",
+		"XX ",
+		'X', Essence
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Earth_Symbol), new Object[]{
+		" X ",
+		"X X",
+		" X ",
+		'X', Essence
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Death_Symbol), new Object[]{
+		" X ",
+		"XXX",
+		"X X",
+		'X', Essence
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Light_Symbol), new Object[]{
+		"XXX",
+		"XXX",
+		"XXX",
+		'X', Essence
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Dark_Symbol), new Object[]{
+		" X ",
+		"XXX",
+		" X ",
+		'X', Essence
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Air_Symbol), new Object[]{
+		" XX",
+		" X ",
+		"XX ",
+		'X', Essence
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(Arcane_Symbol), new Object[]{
+		"XXX",
+		" X ",
+		"XXX",
+		'X', Essence
+	});
+	
+	LanguageRegistry.instance().addStringLocalization("itemGroup.hatb0t_pictocraftTab", "RuneCraftery");
+	
+}
+
+@EventHandler
+public void PostInit(FMLPostInitializationEvent event){
+	
+}
+}

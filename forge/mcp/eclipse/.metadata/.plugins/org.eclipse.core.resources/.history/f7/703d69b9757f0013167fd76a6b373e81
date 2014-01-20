@@ -1,0 +1,12 @@
+package hatb0t.pictocraft;
+
+import net.minecraft.item.Item;
+
+public class Rune_Ore extends Item{
+
+	public Rune_Ore(int id) {
+        super(id);
+        // TODO Auto-generated constructor stub
+	}
+
+}
